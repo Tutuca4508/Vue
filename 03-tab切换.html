@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        div{
+            width:100px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-show="isIndex" class="index">首页</div>
+        <div v-show="isList" class="list">新闻列表</div>
+        <div v-show="isContent" class="content">新闻内容</div>
+        <hr>
+        <button @click="showIndex">首页</button>
+        <button  @click="showList">新闻列表</button>
+        <button  @click="showContent">新闻内容</button>
+    </div>
+
+    <script>
+        let app = new Vue ({
+            el:"#app",
+            data:{
+                isIndex:true
+            },
+            methods:{
+                showIndex:function (e) {
+                    app.isIndex = !app.isIndex
+                },
+                showList:function (e) {
+                    app.isList = !app.isList
+                },
+                showContent:function (e) {
+                    app.Content = !app.Content
+                }
+            }
+        })
+    </script>
+</body>
+</html>
